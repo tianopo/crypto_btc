@@ -23,7 +23,7 @@
 }
 
 .section_botao-claro {
-  @apply bg-verde-claro;
+  @apply bg-blue-500;
 }
 
 .section_icone-claro {

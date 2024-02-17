@@ -30,8 +30,8 @@ export const Inicio = () => {
         imagem="/projeto/banner.webp"
         titulo="New Bitcoin"
         descricao="This Bitcoin is intended to be used for a private group of people"
-        rota="https://wa.me/5512982435638"
-        botao="Contact"
+        rota="https://ftmscan.com/token/0x721a0ac350bdd13b8a7e837095a1734332ea2d1d"
+        botao="Contract"
         id="agendamento"
       />
       <SectionContato id="contato" titulo="Contact" />
