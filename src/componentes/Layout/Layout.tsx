@@ -1,18 +1,14 @@
-import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
 import { CX } from "../Tags/ConteudoX";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-// fechar sidebar
-export const Layout = () => {
-  const { t: tradutor } = useTranslation();
-  const t = (t: string) => tradutor(`layout.${t}`);
 
+export const Layout = () => {
   const nav = [
-    { texto: t("inicio"), rota: "#" },
-    { texto: "informações", rota: "#informacoes" },
-    { texto: "agendamento", rota: "#agendamento" },
-    { texto: t("contato"), rota: "#contato" },
+    { texto: "Home", rota: "#" },
+    { texto: "Information", rota: "#informacoes" },
+    { texto: "Image", rota: "#agendamento" },
+    { texto: "Contact", rota: "#contato" },
   ];
 
   const icones = [
@@ -23,9 +19,13 @@ export const Layout = () => {
 
   return (
     <CX tipo="div" className={`home-claro`}>
-      <Header imagem="/projeto/logo.svg" navbar={nav} titulo="Fábrica de Software" />
+      <Header imagem="/projeto/btc.jpg" navbar={nav} titulo="New Bitcoin" />
       <Outlet />
-      <Footer titulo="Matheus Henrique de Abreu" description={t("description")} icones={icones} />
+      <Footer
+        titulo="New Bitcoin"
+        description="Join this group to get your cryptocurrencies"
+        icones={icones}
+      />
     </CX>
   );
 };

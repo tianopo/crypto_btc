@@ -1,25 +1,21 @@
 import { CarProfile, Moon, Table } from "@phosphor-icons/react";
-import { useTranslation } from "react-i18next";
 import { FlexCol, SectionContato } from "src/componentes";
 import { SectionBannerSegundo } from "./SectionBannerSegundo";
 import { SectionCardSegundo } from "./SectionCardSegundo";
 import { SectionCarousel } from "./SectionCarousel";
 
 export const Inicio = () => {
-  const { t: tradutor } = useTranslation();
-  const t = (t: string) => tradutor(`inicio.${t}`);
-
   const card = [
     {
-      descricao: t("cardDescricao"),
+      descricao: "Find out ways to obtain bitcoin through contact",
       icone: <Moon size={60} />,
     },
     {
-      descricao: t("cardDescricao"),
+      descricao: "Find out who has the power to transact bitcoins",
       icone: <CarProfile size={60} />,
     },
     {
-      descricao: t("cardDescricao"),
+      descricao: "Plan your best purchases with a small, private group",
       icone: <Table size={60} />,
     },
   ];
@@ -27,22 +23,18 @@ export const Inicio = () => {
   return (
     <FlexCol className="gap-32">
       <SectionCarousel
-        imagens={[
-          "/projeto/banner.webp",
-          "/projeto/banner2.png",
-          "/projeto/banner3.jpeg",
-        ]}
+        imagens={["/projeto/banner.webp", "/projeto/banner2.avif", "/projeto/banner3.jpg"]}
       />
       <SectionCardSegundo card={card} id="informacoes" />
       <SectionBannerSegundo
         imagem="/projeto/banner.webp"
-        titulo="Fábrica de Software"
-        descricao={t("bannerDescricao")}
+        titulo="New Bitcoin"
+        descricao="This Bitcoin is intended to be used for a private group of people"
         rota="https://wa.me/5512982435638"
-        botao={t("bannerBotao")}
+        botao="Contact"
         id="agendamento"
       />
-      <SectionContato id="contato" titulo={t("contatoTitulo")} />
+      <SectionContato id="contato" titulo="Contact" />
     </FlexCol>
   );
 };

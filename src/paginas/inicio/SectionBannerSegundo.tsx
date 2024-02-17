@@ -23,10 +23,10 @@ export const SectionBannerSegundo = ({
         id={id}
       >
         <div className="absolute inset-0 flex min-w-0 flex-col items-center justify-center gap-3 p-12 text-center text-white">
-          <img src="/projeto/logo.svg" alt={titulo} className="h-20 w-24" />
+          <img src="/projeto/btc2.webp" alt={titulo} className="h-20 w-24 rounded-full" />
           {titulo && <h1 className="mb-4 text-justify text-36 font-bold">{titulo}</h1>}
           {descricao && (
-            <p className="mb-6 max-w-full overflow-hidden text-ellipsis whitespace-pre-line text-justify text-18 md:whitespace-break-spaces">
+            <p className="mb-6 max-w-full overflow-hidden text-ellipsis whitespace-pre-line text-justify text-18 font-extrabold md:whitespace-break-spaces">
               {descricao}
             </p>
           )}

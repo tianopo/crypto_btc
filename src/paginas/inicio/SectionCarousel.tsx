@@ -45,20 +45,21 @@ export const SectionCarousel = ({ id, imagens }: ISectionCarousel) => {
           <span
             key={index}
             onClick={() => selecionarImagem(index)}
-            className={`bg-icone-claro mx-1 inline-block h-4 w-4 -translate-y-5 cursor-pointer rounded-full ${index === indiceImagem ? "opacity-100" : "opacity-50"
-              }`}
+            className={`mx-1 inline-block h-4 w-4 -translate-y-5 cursor-pointer rounded-full bg-icone-claro ${
+              index === indiceImagem ? "opacity-100" : "opacity-50"
+            }`}
           />
         ))}
       </div>
       <button
         onClick={retrocederImagem}
-        className={`bg-icone-claro absolute left-12 top-1/2 -translate-y-1/2 transform cursor-pointer rounded-full p-2 text-white`}
+        className={`absolute left-12 top-1/2 -translate-y-1/2 transform cursor-pointer rounded-full bg-icone-claro p-2 text-white`}
       >
         {"<"}
       </button>
       <button
         onClick={avancarImagem}
-        className={`bg-icone-claro absolute right-12 top-1/2 -translate-y-1/2 transform cursor-pointer rounded-full p-2 text-white`}
+        className={`absolute right-12 top-1/2 -translate-y-1/2 transform cursor-pointer rounded-full bg-icone-claro p-2 text-white`}
       >
         {">"}
       </button>

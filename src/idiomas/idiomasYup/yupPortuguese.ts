@@ -1,58 +1,58 @@
 /* eslint no-template-curly-in-string: "off" */
 import * as Yup from "yup";
 
-export const yupPortugueseLocale: Yup.LocaleObject = {
+export const yupEnglishLocale: Yup.LocaleObject = {
   string: {
-    uuid: "${path} inválido",
-    email: "${path} é um email inválido",
-    length: "${path} tem ${length} caracteres?",
-    lowercase: "${path} está em maiúsculo?",
-    uppercase: "${path} está em minúsculo?",
+    uuid: "${path} invalid",
+    email: "${path} is an invalid email",
+    length: "${path} has ${length} characters?",
+    lowercase: "${path} is in uppercase?",
+    uppercase: "${path} is in lowercase?",
     min: ({ min, path }) =>
-      `${path} deve ter no mínimo ${min} ${min === 1 ? "caractere" : "caracteres"}`,
+      `${path} must have at least ${min} ${min === 1 ? "character" : "characters"}`,
     max: ({ max, path }) =>
-      `${path} deve ter no máximo ${max} ${max === 1 ? "caractere" : "caracteres"}`,
-    trim: "${path} não tem espaços em branco?",
-    url: "${path} tem um formato de URL válido?",
+      `${path} must have at most ${max} ${max === 1 ? "character" : "characters"}`,
+    trim: "${path} has no whitespace?",
+    url: "${path} has a valid URL format?",
   },
   number: {
-    min: "${path} é maior que ${min}?",
-    max: "${path} é menor que ${max}?",
-    integer: "${path} é um número inteiro?",
-    lessThan: "${path} é menor que ${less}?",
-    moreThan: "${path} é maior que ${more}?",
-    negative: "${path} é um número negativo?",
-    positive: "${path} é um número positivo?",
+    min: "${path} is greater than ${min}?",
+    max: "${path} is less than ${max}?",
+    integer: "${path} is an integer number?",
+    lessThan: "${path} is less than ${less}?",
+    moreThan: "${path} is greater than ${more}?",
+    negative: "${path} is a negative number?",
+    positive: "${path} is a positive number?",
   },
   array: {
-    min: "${path} tem no mínimo ${min} itens?",
-    length: "${path} tem ${length} itens?",
-    max: "${path} tem no máximo ${max} itens?",
+    min: "${path} has at least ${min} items?",
+    length: "${path} has ${length} items?",
+    max: "${path} has at most ${max} items?",
   },
   boolean: {
-    isValue: "${path} tem o mesmo valor de ${value}?",
+    isValue: "${path} has the same value as ${value}?",
   },
   date: {
-    max: "${path} é anterior à ${max}?",
-    min: "${path} é posterior à ${min}?",
+    max: "${path} is before ${max}?",
+    min: "${path} is after ${min}?",
   },
   object: {
-    noUnknown: "${path} está sem chaves especificadas na forma do objeto",
+    noUnknown: "${path} has no keys specified in object form",
   },
   mixed: {
-    default: "${path} é inválido",
-    notNull: "${path} é obrigatório",
-    required: "${path} é obrigatório",
-    oneOf: "${path} é um dos seguintes valores: ${values}",
+    default: "${path} is invalid",
+    notNull: "${path} is required",
+    required: "${path} is required",
+    oneOf: "${path} is one of the following values: ${values}",
     notType: ({ path, type, value, originalValue }) => {
       const isCast = originalValue != null && originalValue !== value;
-      let msg = `${path} é um \`${type}\`, ` + `mas o valor final foi: \`${value}\`.`;
+      let msg = `${path} is a \`${type}\`, ` + `but the final value was: \`${value}\`.`;
       if (isCast) {
-        msg += ` O valor original é \`${originalValue}\`.`;
+        msg += ` The original value is \`${originalValue}\`.`;
       }
       return msg;
     },
-    defined: "${path} não é indefinido",
-    notOneOf: "${path} não é um dos seguintes valores: ${values}",
+    defined: "${path} is not undefined",
+    notOneOf: "${path} is not one of the following values: ${values}",
   },
 };

@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { Flex } from "../Flex/Flex";
 import { FlexCol } from "../Flex/FlexCol";
 import { FlexRow } from "../Flex/FlexRow";
@@ -20,9 +19,6 @@ interface IFooter {
 }
 
 export const Footer = ({ titulo, description, icones, nav }: IFooter) => {
-  const { t: tradutor } = useTranslation();
-  const t = (t: string) => tradutor(`footer.${t}`);
-
   return (
     <footer
       className={`
@@ -94,7 +90,7 @@ export const Footer = ({ titulo, description, icones, nav }: IFooter) => {
         {icones && (
           <FlexCol className="w-1/2 items-start text-end md:items-end">
             <TX tipo="p" className="whitespace-nowrap text-24 font-bold">
-              {t("redesSociais")}
+              Social media
             </TX>
             <FlexRow className="gap-3">
               {icones?.map(({ imagem, rota }, key) => (
@@ -109,7 +105,7 @@ export const Footer = ({ titulo, description, icones, nav }: IFooter) => {
       <FlexCol className="w-full items-center px-5">
         <DivisorX />
         <TX tipo="p" className="text-10 font-semibold text-white">
-          © {t("direitoAutoral")} {new Date().getFullYear()}. {t("feitoPor")}{" "}
+          © Copyright {new Date().getFullYear()}. Made by{" "}
           <LinkX rota="https://github.com/tianopo" target="blank">
             tianopo
           </LinkX>

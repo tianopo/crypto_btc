@@ -1,6 +1,5 @@
 import axios from "axios";
 import { FormProvider } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { Form } from "src/componentes/Formulario/Form";
 import { Input } from "src/componentes/Formulario/Input";
@@ -11,8 +10,6 @@ import { Section } from "../Section";
 
 export const SectionContato = ({ id, titulo }: ISectionContato) => {
   const { contexto } = useInicio();
-  const { t: tradutor } = useTranslation();
-  const t = (t: string) => tradutor(`contato.${t}`);
 
   const {
     formState: { errors },
@@ -43,11 +40,11 @@ export const SectionContato = ({ id, titulo }: ISectionContato) => {
       });
 
       if (response.data.success) {
-        toast.success(t("toastSucesso"));
+        toast.success("Form sent successfully");
         reset();
       }
     } catch (error) {
-      toast.error(`${t("toastErro")}: ${error}`);
+      toast.error(`${"Error submitting form"}: ${error}`);
     }
   };
 
@@ -61,14 +58,14 @@ export const SectionContato = ({ id, titulo }: ISectionContato) => {
           <Form onSubmit={onSubmit}>
             <Input
               register={register("nome")}
-              titulo={t("nome")}
-              placeholder="João da Silva"
+              titulo="name"
+              placeholder="John Wick"
               errors={errors.nome?.message}
               required
             />
             <Input
               register={register("email")}
-              titulo={t("email")}
+              titulo="email"
               tipo="email"
               placeholder="x@x.com"
               errors={errors.email?.message}
@@ -76,29 +73,25 @@ export const SectionContato = ({ id, titulo }: ISectionContato) => {
             />
             <Input
               register={register("contato")}
-              titulo={t("contato")}
+              titulo="contact"
               placeholder="(XX) XXXXX-XXXX"
               tipo="tel"
               errors={errors.contato?.message}
               required
             />
             <Textarea
-              titulo={t("mensagem")}
+              titulo="message"
               register={register("mensagem")}
-              placeholder={t("mensagemPlaceholder")}
+              placeholder="Write your message"
               errors={errors.mensagem?.message}
             />
-            <button className={`botao botao-claro m-10`}>{t("botaoEnviar")}</button>
+            <button className={`botao botao-claro m-10`}>Send</button>
             <input type="hidden" name="redirectTo" value={window.location.href}></input>
           </Form>
         </FormProvider>
       </div>
       <div className="hidden md:inline">
-        <img
-          src="/projeto/banner.webp"
-          alt="Imagem da Empresa"
-          className="h-fit w-fit rounded-full"
-        />
+        <img src="/projeto/banner.webp" alt="Company Image" className="h-fit w-fit rounded-full" />
       </div>
     </Section>
   );
